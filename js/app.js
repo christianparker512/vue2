@@ -20,6 +20,12 @@ const app = Vue.createApp({
   },
   created(){
     console.log('created()');
+  },
+  beforeMount(){
+    console.log('beforeMounted()');
+  },
+  mounted(){
+    console.log('mounted()');
   }
 });
 
