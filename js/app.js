@@ -15,28 +15,37 @@ const app = Vue.createApp({
       // console.dir(this.$refs.userText);
     },
   },
-  beforeCreate(){
+  beforeCreate() {
     console.log('beforeCreate()');
   },
-  created(){
+  created() {
     console.log('created()');
   },
-  beforeMount(){
-    console.log('beforeMounted()');
+  beforeMount() {
+    console.log('beforeMount()');
   },
-  mounted(){
+  mounted() {
     console.log('mounted()');
   },
-  beforeUpdate(){
-    console.log('beforeUpdated');
+  beforeUpdate() {
+    console.log('beforeUpdate()');
   },
-  updated(){
+  updated() {
     console.log('updated()');
-  }
-
+  },
+  beforeUnmount() {
+    console.log('beforeUnmount()');
+  },
+  unmounted() {
+    console.log('unmounted()');
+  },
 });
 
 app.mount('#app');
+
+setTimeout(function () {
+  app.unmount();
+}, 3000);
 
 const app2 = Vue.createApp({
   template: `
@@ -44,9 +53,9 @@ const app2 = Vue.createApp({
   `,
   data() {
     return {
-      favoriteMeal: 'Pizza'
+      favoriteMeal: 'Pizza',
     };
-  }
+  },
 });
 
 app2.mount('#app2');
@@ -55,7 +64,7 @@ app2.mount('#app2');
 
 const data = {
   message: 'Hello!',
-  longMessage: 'Hello! World!'
+  longMessage: 'Hello! World!',
 };
 
 const handler = {
@@ -64,11 +73,11 @@ const handler = {
       target.longMessage = value + ' World!';
     }
     target.message = value;
-  }
+  },
 };
 
 const proxy = new Proxy(data, handler);
 
 proxy.message = 'Hello!!!!';
 
-console.log(proxy.longMessage);
+// console.log(proxy.longMessage);
