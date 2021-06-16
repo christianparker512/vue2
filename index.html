@@ -8,9 +8,9 @@
     href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/vue@next" defer></script>
-  <script src="js/app.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
 <header>
@@ -22,5 +22,10 @@
   <button @click="setText">Set Text</button>
   <p>{{ message }}</p>
 </section>
+<section id="app2">
+  <!-- DOES NOT WORK: <p>{{ message }}</p> -->
+
+</section>
 </body>
 </html>
+
