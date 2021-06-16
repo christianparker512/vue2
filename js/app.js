@@ -15,6 +15,12 @@ const app = Vue.createApp({
       // console.dir(this.$refs.userText);
     },
   },
+  beforeCreate(){
+    console.log('beforeCreate()');
+  },
+  created(){
+    console.log('created()');
+  }
 });
 
 app.mount('#app');
